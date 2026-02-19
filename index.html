@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Professional Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -1000px 0;
+            }
+            100% {
+                background-position: 1000px 0;
+            }
+        }
+
+        @keyframes rotate-border {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .animate-fade-in-down {
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .animate-slide-in-left {
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .animate-slide-in-right {
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        .animate-pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .animate-shimmer {
+            background: linear-gradient(90deg, #1e3c72, #00d4ff, #1e3c72);
+            background-size: 1000px 100%;
+            animation: shimmer 3s infinite;
+        }
+
+        .animate-rotate-border {
+            animation: rotate-border 4s linear infinite;
+        }
+
+        .transition-all-smooth {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .skill-tag {
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card {
+            transition: all 0.4s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px rgba(0, 212, 255, 0.2);
+        }
+
+        .cert-item {
+            transition: all 0.3s ease;
+        }
+
+        .cert-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+        }
+
+        .nav-link {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background-color: #00d4ff;
+            transition: left 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            left: 0;
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: #00d4ff;
+            animation: expandWidth 0.8s ease-out forwards;
+        }
+
+        @keyframes expandWidth {
+            to {
+                width: 100%;
+            }
+        }
+
+        .stagger-item-1 { animation-delay: 0.1s; }
+        .stagger-item-2 { animation-delay: 0.2s; }
+        .stagger-item-3 { animation-delay: 0.3s; }
+        .stagger-item-4 { animation-delay: 0.4s; }
+        .stagger-item-5 { animation-delay: 0.5s; }
+
+        .button-glow {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button-glow::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .button-glow:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .icon-float {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-200">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-900 via-blue-800 to-cyan-700 text-white py-20 px-4 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-cyan-400 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-400 rounded-full blur-3xl animate-pulse"></div>
+        </div>
+        
+        <div class="max-w-5xl mx-auto relative z-10">
+            <h1 class="text-6xl font-bold mb-4 animate-fade-in-down text-center">
+                🔒 Ajani Shukuroh
+            </h1>
+            <p class="text-2xl text-center mb-2 animate-fade-in-up" style="animation-delay: 0.2s;">
+                Cybersecurity Specialist | Digital Forensics | Incident Response
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-6 mt-8 animate-fade-in-up" style="animation-delay: 0.4s;">
+                <a href="mailto:your.ajanishukuroholamide@gmail.com" class="px-6 py-3 bg-cyan-400 text-blue-900 rounded-lg font-semibold transition-all-smooth hover:bg-cyan-300 hover:shadow-lg hover:shadow-cyan-400/50 button-glow">
+                    📧 Email
+                </a>
+                <a href="https://linkedin/Shukuroh-olamide.com" target="_blank" class="px-6 py-3 border-2 border-cyan-400 text-cyan-400 rounded-lg font-semibold transition-all-smooth hover:bg-cyan-400 hover:text-blue-900 button-glow">
+                    💼 LinkedIn
+                </a>
+                <a href="https://github.com/Biodun555" target="_blank" class="px-6 py-3 border-2 border-cyan-400 text-cyan-400 rounded-lg font-semibold transition-all-smooth hover:bg-cyan-400 hover:text-blue-900 button-glow">
+                    🐙 GitHub
+                </a>
+                <a href="resume.html" download class="px-6 py-3 bg-white text-blue-900 rounded-lg font-semibold transition-all-smooth hover:bg-gray-100 button-glow">
+                    📄 Resume
+                </a>
+                <a href="tel:+2349068566420" class="px-6 py-3 border-2 border-cyan-400 text-cyan-400 rounded-lg font-semibold transition-all-smooth hover:bg-cyan-400 hover:text-blue-900 button-glow">
+                    📱 Phone
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-gradient-to-r from-blue-900 to-blue-800 shadow-xl border-b-2 border-cyan-400">
+        <ul class="flex flex-wrap justify-center gap-1">
+            <li><a href="#about" class="nav-link block px-6 py-4 text-white font-semibold hover:text-cyan-400 transition-all-smooth">About</a></li>
+            <li><a href="#skills" class="nav-link block px-6 py-4 text-white font-semibold hover:text-cyan-400 transition-all-smooth">Skills</a></li>
+            <li><a href="#certifications" class="nav-link block px-6 py-4 text-white font-semibold hover:text-cyan-400 transition-all-smooth">Certifications</a></li>
+            <li><a href="#projects" class="nav-link block px-6 py-4 text-white font-semibold hover:text-cyan-400 transition-all-smooth">Projects</a></li>
+            <li><a href="#experience" class="nav-link block px-6 py-4 text-white font-semibold hover:text-cyan-400 transition-all-smooth">Experience</a></li>
+            <li><a href="#contact" class="nav-link block px-6 py-4 text-white font-semibold hover:text-cyan-400 transition-all-smooth">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-5xl mx-auto px-4 py-12">
+
+        <!-- About Section -->
+        <section id="about" class="mb-16">
+            <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg p-8 shadow-2xl transform transition-all-smooth hover:shadow-cyan-400/20 animate-fade-in-up">
+                <h2 class="text-4xl font-bold mb-6 text-cyan-400 section-title">About Me</h2>
+                
+                <div class="space-y-4 text-lg leading-relaxed">
+                    <p class="animate-fade-in-up" style="animation-delay: 0.1s;">
+                        Dedicated cybersecurity professional with a passion for protecting organizations from evolving threats. With expertise in vulnerability assessment, threat analysis, and incident response, I bring a comprehensive approach to security challenges. Committed to continuous learning and staying ahead of emerging cyber threats.
+                    </p>
+                    
+                    <p class="font-semibold text-cyan-300 mt-6 animate-fade-in-up" style="animation-delay: 0.2s;">My focus areas include:</p>
+                    
+                    <ul class="space-y-3 ml-6 animate-fade-in-up" style="animation-delay: 0.3s;">
+                        <li class="flex items-center stagger-item-1 animate-slide-in-left">
+                            <span class="text-cyan-400 mr-3 text-xl">▸</span>
+                            Network security and infrastructure protection
+                        </li>
+                        <li class="flex items-center stagger-item-2 animate-slide-in-left">
+                            <span class="text-cyan-400 mr-3 text-xl">▸</span>
+                            Vulnerability assessment and penetration testing
+                        </li>
+                        <li class="flex items-center stagger-item-3 animate-slide-in-left">
+                            <span class="text-cyan-400 mr-3 text-xl">▸</span>
+                            Incident response and forensics
+                        </li>
+                        <li class="flex items-center stagger-item-4 animate-slide-in-left">
+                            <span class="text-cyan-400 mr-3 text-xl">▸</span>
+                            Security compliance and risk management
+                        </li>
+                        <li class="flex items-center stagger-item-5 animate-slide-in-left">
+                            <span class="text-cyan-400 mr-3 text-xl">▸</span>
+                            Security awareness training and awareness programs
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="mb-16">
+            <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg p-8 shadow-2xl animate-fade-in-up">
+                <h2 class="text-4xl font-bold mb-8 text-cyan-400 section-title">Technical Skills</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Security Tools -->
+                    <div class="animate-slide-in-left">
+                        <h3 class="text-xl font-bold text-cyan-300 mb-4">🔧 Security Tools & Platforms</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 bg-cyan-400/20 text-cyan-300 rounded-full text-sm font-semibold skill-tag border border-cyan-400/50 hover:border-cyan-300 hover:bg-cyan-400/30">Burp Suite</span>
+                            <span class="px-4 py-2 bg-cyan-400/20 text-cyan-300 rounded-full text-sm font-semibold skill-tag border border-cyan-400/50 hover:border-cyan-300 hover:bg-cyan-400/30">Metasploit</span>
+                            <span class="px-4 py-2 bg-cyan-400/20 text-cyan-300 rounded-full text-sm font-semibold skill-tag border border-cyan-400/50 hover:border-cyan-300 hover:bg-cyan-400/30">Wireshark</span>
+                            <span class="px-4 py-2 bg-cyan-400/20 text-cyan-300 rounded-full text-sm font-semibold skill-tag border border-cyan-400/50 hover:border-cyan-300 hover:bg-cyan-400/30">OWASP ZAP</span>
+                            <span class="px-4 py-2 bg-cyan-400/20 text-cyan-300 rounded-full text-sm font-semibold skill-tag border border-cyan-400/50 hover:border-cyan-300 hover:bg-cyan-400/30">Nessus</span>
+                            <span class="px-4 py-2 bg-cyan-400/20 text-cyan-300 rounded-full text-sm font-semibold skill-tag border border-cyan-400/50 hover:border-cyan-300 hover:bg-cyan-400/30">Splunk</span>
+                        </div>
+                    </div>
+
+                    <!-- Operating Systems -->
+                    <div class="animate-slide-in-right">
+                        <h3 class="text-xl font-bold text-cyan-300 mb-4">💻 Operating Systems</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 bg-cyan-400/20 text-cyan-300 rounded-full text-sm font-semibold skill-tag border border-cyan-400/50 hover:border-cyan-300 hover:bg-cyan-400/30">Windows</span>
+                            <span class="px-4 py-2 bg-cyan-400/20 text-cyan-300 rounded-full text-sm font-semibold skill-tag border border-cyan-400/50 hover:border-cyan-300 hover:bg-cyan-400/30">Linux</span>
+                            <span class="px-4 py-2 bg-cyan-400/20 text-cyan-300 rounded-full text-sm font-semibold skill-tag border border-cyan-400/50 hover:border-cyan-300 hover:bg-cyan-400/30">macOS</span>
+                            <span class="px-4 py-2 bg-cyan-400/20 text-cyan-300 rounded-full text-sm font-semibold skill-tag border border-cyan-400/50 hover:border-cyan-300 hover:bg-cyan-400/30">Kali Linux</span>
+                        </div>
+                    </div>
+
+                    <!-- Programming -->
+                    <div class="animate-slide-in-left" style="animation-delay: 0.1s;">
+                        <h3 class="text-xl font-bold text-cyan-300 mb-4">⚙️ Programming & Scripting</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 bg-cyan-400/20 text-cyan-300 rounded-full text-sm font-semibold skill-tag border border-cyan-400/50 hover:border-cyan-300 hover:bg-cyan-400/30">Python</span>
+                            <span class="px-4 py-2 bg-cyan-400/20 text-cyan-300 rounded-full text-sm font-semibold skill-tag border border-cyan-400/50 hover:border-cyan-300 hover:bg-cyan-400/30">Bash</span>
+                            <span class="px-4 py-2 bg-cyan-400/20 text-cyan-300 rounded-full text-sm font-semibold skill-tag border border-cyan-400/50 hover:border-cyan-300 hover:bg-cyan-400/30">PowerShell</span>
+                            <span class="px-4 py-2 bg-cyan-400/20 text-cyan-300 rounded-full text-sm font-semibold skill-tag border border-cyan-400/50 hover:border-cyan-300 hover:bg-cyan-400/30">SQL</span>
+                            <span class="px-4 py-2 bg-cyan-400/20 text-cyan-300 rounded-full text-sm font-semibold skill-tag border border-cyan-400/50 hover:border-cyan-300 hover:bg-cyan-400/30">JavaScript</span>
+                        </div>
+                    </div>
+
+                    <!-- Security Domains -->
+                    <div class="animate-slide-in-right" style="animation-delay: 0.1s;">
+                        <h3 class="text-xl font-bold text-cyan-300 mb-4">🛡️ Security Domains</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 bg-cyan-400/20 text-cyan-300 rounded-full text-sm font-semibold skill-tag border border-cyan-400/50 hover:border-cyan-300 hover:bg-cyan-400/30">Network Security</span>
+                            <span class="px-4 py-2 bg-cyan-400/20 text-cyan-300 rounded-full text-sm font-semibold skill-tag border border-cyan-400/50 hover:border-cyan-300 hover:bg-cyan-400/30">Web App Security</span>
+                            <span class="px-4 py-2 bg-cyan-400/20 text-cyan-300 rounded-full text-sm font-semibold skill-tag border border-cyan-400/50 hover:border-cyan-300 hover:bg-cyan-400/30">Cloud Security</span>
+                            <span class="px-4 py-2 bg-cyan-400/20 text-cyan-300 rounded-full text-sm font-semibold skill-tag border border-cyan-400/50 hover:border-cyan-300 hover:bg-cyan-400/30">Incident Response</span>
+                            <span class="px-4 py-2 bg-cyan-400/20 text-cyan-300 rounded-full text-sm font-semibold skill-tag border border-cyan-400/50 hover:border-cyan-300 hover:bg-cyan-400/30">Malware Analysis</span>
+                            <span class="px-4 py-2 bg-cyan-400/20 text-cyan-300 rounded-full text-sm font-semibold skill-tag border border-cyan-400/50 hover:border-cyan-300 hover:bg-cyan-400/30">Cryptography</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="mb-16">
+            <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg p-8 shadow-2xl animate-fade-in-up">
+                <h2 class="text-4xl font-bold mb-8 text-cyan-400 section-title">Certifications</h2>
+                
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="cert-item bg-gradient-to-r from-blue-900/40 to-cyan-900/40 p-5 rounded-lg border-l-4 border-cyan-400 hover:border-cyan-300 animate-fade-in-up">
+                        <h3 class="text-lg font-bold text-cyan-300 mb-2">🎓 Certified Ethical Hacker (CEH)</h3>
+                        <p class="text-gray-300"><strong>Issuer:</strong> EC-Council</p>
+                        <p class="text-gray-300"><strong>Date:</strong> December 2025</p>
+                    </div>
+
+                    <div class="cert-item bg-gradient-to-r from-blue-900/40 to-cyan-900/40 p-5 rounded-lg border-l-4 border-cyan-400 hover:border-cyan-300 animate-fade-in-up" style="animation-delay: 0.1s;">
+                        <h3 class="text-lg font-bold text-cyan-300 mb-2">🏆 CompTIA Security+</h3>
+                        <p class="text-gray-300"><strong>Issuer:</strong> CompTIA</p>
+                        <p class="text-gray-300"><strong>Date:</strong> October 2025</p>
+                    </div>
+
+                    <div class="cert-item bg-gradient-to-r from-blue-900/40 to-cyan-900/40 p-5 rounded-lg border-l-4 border-cyan-400 hover:border-cyan-300 animate-fade-in-up" style="animation-delay: 0.2s;">
+                        <h3 class="text-lg font-bold text-cyan-300 mb-2">📋 CompTIA Network+</h3>
+                        <p class="text-gray-300"><strong>Issuer:</strong> CompTIA</p>
+                        <p class="text-gray-300"><strong>Date:</strong> August 2025</p>
+                    </div>
+
+                    <div class="cert-item bg-gradient-to-r from-blue-900/40 to-cyan-900/40 p-5 rounded-lg border-l-4 border-cyan-400 hover:border-cyan-300 animate-fade-in-up" style="animation-delay: 0.3s;">
+                        <h3 class="text-lg font-bold text-cyan-300 mb-2">⚡ CompTIA A+</h3>
+                        <p class="text-gray-300"><strong>Issuer:</strong> CompTIA</p>
+                        <p class="text-gray-300"><strong>Date:</strong> June 2025</p>
+                    </div>
+
+                    <div class="cert-item bg-gradient-to-r from-blue-900/40 to-cyan-900/40 p-5 rounded-lg border-l-4 border-yellow-400 hover:border-yellow-300 animate-fade-in-up" style="animation-delay: 0.4s;">
+                        <h3 class="text-lg font-bold text-yellow-300 mb-2">🔄 OSCP (In Progress)</h3>
+                        <p class="text-gray-300"><strong>Issuer:</strong> Offensive Security</p>
+                        <p class="text-yellow-400 text-sm"><strong>Expected:</strong> Q2 2026</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="mb-16">
+            <div class="animate-fade-in-up">
+                <h2 class="text-4xl font-bold mb-8 text-cyan-400 section-title">Security Projects by Ajani Shukuroh</h2>
+                
+                <!-- Security Operations & Automation -->
+                <div class="mb-10">
+                    <h3 class="text-2xl font-bold text-cyan-300 mb-4 flex items-center"><span class="mr-3">🛡️</span>Security Operations & Automation</h3>
+                    <div class="space-y-4">
+                        <div class="project-card bg-gradient-to-br from-gray-800 via-gray-750 to-gray-700 p-6 rounded-lg border border-cyan-400/30 shadow-xl animate-fade-in-up">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-xl font-bold text-cyan-300">Mini SIEM Engine</h4>
+                                <span class="px-3 py-1 bg-blue-500/30 text-blue-300 rounded-full text-xs border border-blue-400/50">Operations</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">Built a log-parsing engine that monitors SSH authentication logs in real-time</p>
+                            <p class="text-gray-300 mb-3">Automatically blocks suspicious IPs and alerts SOC team via Discord API integration.</p>
+                            <p class="text-green-400 font-semibold text-sm mb-3">✓ Impact: Reduced manual auditing by 85%; blocked 200+ unauthorized attempts</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">Python</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">Regex</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">IPTables</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">Discord API</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card bg-gradient-to-br from-gray-800 via-gray-750 to-gray-700 p-6 rounded-lg border border-cyan-400/30 shadow-xl animate-fade-in-up" style="animation-delay: 0.1s;">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-xl font-bold text-cyan-300">Phishing Detection Framework</h4>
+                                <span class="px-3 py-1 bg-purple-500/30 text-purple-300 rounded-full text-xs border border-purple-400/50">AppSec</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">Web app that triages suspicious emails via SPF/DKIM and URL reputation analysis</p>
+                            <p class="text-gray-300 mb-3">Provides one-click verdict for SOC analysts using VirusTotal and Cisco Talos APIs.</p>
+                            <p class="text-green-400 font-semibold text-sm mb-3">✓ Impact: Reduced triage time from 10 minutes to ~45 seconds</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">Flask</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">VirusTotal API</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">Cisco Talos</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">Threat Intelligence</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card bg-gradient-to-br from-gray-800 via-gray-750 to-gray-700 p-6 rounded-lg border border-cyan-400/30 shadow-xl animate-fade-in-up" style="animation-delay: 0.2s;">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-xl font-bold text-cyan-300">Secure Attendance Node</h4>
+                                <span class="px-3 py-1 bg-orange-500/30 text-orange-300 rounded-full text-xs border border-orange-400/50">IAM</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">High-integrity attendance system with encrypted credential storage and RBAC</p>
+                            <p class="text-gray-300 mb-3">Implements strict role-based access control with AES-256 encryption and PostgreSQL database.</p>
+                            <p class="text-green-400 font-semibold text-sm mb-3">✓ Impact: 100% data privacy compliance; zero SQL injection vulnerabilities</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">PostgreSQL</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">Bcrypt</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">AES-256</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">RBAC</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Digital Forensics & Incident Response -->
+                <div class="mb-10">
+                    <h3 class="text-2xl font-bold text-cyan-300 mb-4 flex items-center"><span class="mr-3">🔍</span>Digital Forensics & Incident Response</h3>
+                    <div class="space-y-4">
+                        <div class="project-card bg-gradient-to-br from-gray-800 via-gray-750 to-gray-700 p-6 rounded-lg border border-cyan-400/30 shadow-xl animate-fade-in-up" style="animation-delay: 0.3s;">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-xl font-bold text-cyan-300">Forensic Investigation: Case 042</h4>
+                                <span class="px-3 py-1 bg-red-500/30 text-red-300 rounded-full text-xs border border-red-400/50">Forensics</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">Investigated compromised Windows workstation; reconstructed attacker timeline</p>
+                            <p class="text-gray-300 mb-3">Recovered deleted artifacts and performed $MFT analysis to pinpoint data exfiltration source.</p>
+                            <p class="text-green-400 font-semibold text-sm mb-3">✓ Impact: Delivered comprehensive 12-page remediation report with timeline</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">FTK Imager</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">Autopsy</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">Wireshark</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">$MFT Analysis</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card bg-gradient-to-br from-gray-800 via-gray-750 to-gray-700 p-6 rounded-lg border border-cyan-400/30 shadow-xl animate-fade-in-up" style="animation-delay: 0.4s;">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-xl font-bold text-cyan-300">Memory Forensics Lab</h4>
+                                <span class="px-3 py-1 bg-red-500/30 text-red-300 rounded-full text-xs border border-red-400/50">IR/Forensics</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">Extracted volatile memory from live Linux and Windows systems</p>
+                            <p class="text-gray-300 mb-3">Detected malware persistence, malicious processes, and unauthorized backdoors.</p>
+                            <p class="text-green-400 font-semibold text-sm mb-3">✓ Impact: Identified rootkits and credential dumping attempts</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">Volatility</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">Rekall</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">Memory Analysis</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card bg-gradient-to-br from-gray-800 via-gray-750 to-gray-700 p-6 rounded-lg border border-cyan-400/30 shadow-xl animate-fade-in-up" style="animation-delay: 0.5s;">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-xl font-bold text-cyan-300">Disk Imaging & Evidence Handling</h4>
+                                <span class="px-3 py-1 bg-red-500/30 text-red-300 rounded-full text-xs border border-red-400/50">Forensics</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">Full disk imaging and verification with chain-of-custody simulation</p>
+                            <p class="text-gray-300 mb-3">Demonstrated proper forensic workflow for legal admissibility and evidence integrity.</p>
+                            <p class="text-green-400 font-semibold text-sm mb-3">✓ Impact: Ensured forensically sound evidence collection</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">FTK Imager</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">MD5/SHA256</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">Evidence Handling</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Network & Linux Security -->
+                <div class="mb-10">
+                    <h3 class="text-2xl font-bold text-cyan-300 mb-4 flex items-center"><span class="mr-3">🌐</span>Network & Linux Security</h3>
+                    <div class="space-y-4">
+                        <div class="project-card bg-gradient-to-br from-gray-800 via-gray-750 to-gray-700 p-6 rounded-lg border border-cyan-400/30 shadow-xl animate-fade-in-up" style="animation-delay: 0.6s;">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-xl font-bold text-cyan-300">Network Traffic Analysis Simulator</h4>
+                                <span class="px-3 py-1 bg-green-500/30 text-green-300 rounded-full text-xs border border-green-400/50">NetSec</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">Captured and analyzed suspicious network traffic to detect anomalies</p>
+                            <p class="text-gray-300 mb-3">Identified unusual SSH brute-force patterns and data exfiltration attempts.</p>
+                            <p class="text-green-400 font-semibold text-sm mb-3">✓ Impact: Enabled proactive threat detection and anomaly identification</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">Wireshark</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">TCPDump</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">Linux</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card bg-gradient-to-br from-gray-800 via-gray-750 to-gray-700 p-6 rounded-lg border border-cyan-400/30 shadow-xl animate-fade-in-up" style="animation-delay: 0.7s;">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-xl font-bold text-cyan-300">Linux Hardening & Automation Scripts</h4>
+                                <span class="px-3 py-1 bg-green-500/30 text-green-300 rounded-full text-xs border border-green-400/50">SysSec</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">Developed scripts to automate system hardening and firewall management</p>
+                            <p class="text-gray-300 mb-3">Implemented scheduled security audits and consistent security baseline across hosts.</p>
+                            <p class="text-green-400 font-semibold text-sm mb-3">✓ Impact: Reduced manual config time by 70%; ensured security consistency</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">Bash</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">UFW</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">IPTables</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">Cron</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card bg-gradient-to-br from-gray-800 via-gray-750 to-gray-700 p-6 rounded-lg border border-cyan-400/30 shadow-xl animate-fade-in-up" style="animation-delay: 0.8s;">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-xl font-bold text-cyan-300">Ransomware Simulation Lab</h4>
+                                <span class="px-3 py-1 bg-yellow-500/30 text-yellow-300 rounded-full text-xs border border-yellow-400/50">Defense</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">Created controlled ransomware environment to monitor behavior safely</p>
+                            <p class="text-gray-300 mb-3">Generated detection signatures and actionable insights for endpoint security.</p>
+                            <p class="text-green-400 font-semibold text-sm mb-3">✓ Impact: Produced proactive measures against real-world threats</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">Python</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">Windows Sandbox</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">Linux Monitoring</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web & Application Security -->
+                <div class="mb-10">
+                    <h3 class="text-2xl font-bold text-cyan-300 mb-4 flex items-center"><span class="mr-3">🔐</span>Web & Application Security</h3>
+                    <div class="space-y-4">
+                        <div class="project-card bg-gradient-to-br from-gray-800 via-gray-750 to-gray-700 p-6 rounded-lg border border-cyan-400/30 shadow-xl animate-fade-in-up" style="animation-delay: 0.9s;">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-xl font-bold text-cyan-300">Secure Login Portal with 2FA</h4>
+                                <span class="px-3 py-1 bg-purple-500/30 text-purple-300 rounded-full text-xs border border-purple-400/50">WebSec</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">Implemented login system with two-factor authentication</p>
+                            <p class="text-gray-300 mb-3">Features encrypted credential storage and TOTP-based 2FA for strong authentication.</p>
+                            <p class="text-green-400 font-semibold text-sm mb-3">✓ Impact: Demonstrates enterprise-grade authentication practices</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">Flask</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">TOTP</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">PostgreSQL</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">Bcrypt</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card bg-gradient-to-br from-gray-800 via-gray-750 to-gray-700 p-6 rounded-lg border border-cyan-400/30 shadow-xl animate-fade-in-up" style="animation-delay: 1s;">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="text-xl font-bold text-cyan-300">Open-Source Intelligence (OSINT) Lab</h4>
+                                <span class="px-3 py-1 bg-indigo-500/30 text-indigo-300 rounded-full text-xs border border-indigo-400/50">Recon</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">Collected publicly available information for reconnaissance</p>
+                            <p class="text-gray-300 mb-3">Simulated asset discovery and threat intelligence gathering for security exercises.</p>
+                            <p class="text-green-400 font-semibold text-sm mb-3">✓ Impact: Enhanced understanding of reconnaissance and reporting</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">Python</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">Shodan</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">WHOIS</span>
+                                <span class="px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/50">Social Links</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lab Demonstrations Section -->
+        <section id="labs" class="mb-16">
+            <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg p-8 shadow-2xl animate-fade-in-up">
+                <h2 class="text-4xl font-bold mb-8 text-cyan-400 section-title">TryHackMe Lab Achievements</h2>
+                
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-gradient-to-br from-blue-900/40 to-cyan-900/40 p-4 rounded-lg border-l-4 border-cyan-400 animate-fade-in-up">
+                        <h3 class="text-lg font-bold text-cyan-300 mb-2">🐧 Linux Fundamentals</h3>
+                        <p class="text-gray-300 text-sm">Core Linux skills & command line proficiency</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-900/40 to-cyan-900/40 p-4 rounded-lg border-l-4 border-cyan-400 animate-fade-in-up" style="animation-delay: 0.1s;">
+                        <h3 class="text-lg font-bold text-cyan-300 mb-2">🎯 Blue Team Labs</h3>
+                        <p class="text-gray-300 text-sm">Defensive security & incident response</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-900/40 to-cyan-900/40 p-4 rounded-lg border-l-4 border-cyan-400 animate-fade-in-up" style="animation-delay: 0.2s;">
+                        <h3 class="text-lg font-bold text-cyan-300 mb-2">🔍 Threat Hunting</h3>
+                        <p class="text-gray-300 text-sm">Proactive threat identification & analysis</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-900/40 to-cyan-900/40 p-4 rounded-lg border-l-4 border-cyan-400 animate-fade-in-up" style="animation-delay: 0.3s;">
+                        <h3 class="text-lg font-bold text-cyan-300 mb-2">🌐 Web Exploitation</h3>
+                        <p class="text-gray-300 text-sm">Web application security & vulnerability testing</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-900/40 to-cyan-900/40 p-4 rounded-lg border-l-4 border-cyan-400 animate-fade-in-up" style="animation-delay: 0.4s;">
+                        <h3 class="text-lg font-bold text-cyan-300 mb-2">🔐 Network Security</h3>
+                        <p class="text-gray-300 text-sm">Network protocols & intrusion detection</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-900/40 to-cyan-900/40 p-4 rounded-lg border-l-4 border-cyan-400 animate-fade-in-up" style="animation-delay: 0.5s;">
+                        <h3 class="text-lg font-bold text-cyan-300 mb-2">📊 Forensics</h3>
+                        <p class="text-gray-300 text-sm">Digital forensics & evidence collection</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="experience" class="mb-16">
+            <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg p-8 shadow-2xl animate-fade-in-up">
+                <h2 class="text-4xl font-bold mb-8 text-cyan-400 section-title">Professional Experience</h2>
+                
+                <div class="space-y-8">
+                    <div class="border-l-4 border-cyan-400 pl-6 py-4 animate-slide-in-left">
+                        <h3 class="text-2xl font-bold text-cyan-300 mb-1">Junior Security Analyst</h3>
+                        <p class="text-cyan-400 text-lg font-semibold mb-1">TechDefense Solutions</p>
+                        <p class="text-gray-400 mb-3">July 2024 - Present</p>
+                        <p class="text-gray-300 mb-4">Supporting SOC operations, conducting vulnerability assessments, and assisting with incident response for enterprise clients.</p>
+                        <ul class="space-y-2 text-gray-300">
+                            <li class="flex items-start">
+                                <span class="text-cyan-400 mr-3 mt-1">✓</span>
+                                <span>Monitored security alerts and investigated 50+ suspicious events; escalated 10+ confirmed incidents</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-cyan-400 mr-3 mt-1">✓</span>
+                                <span>Executed vulnerability scans with Nessus and documented 120+ findings</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-cyan-400 mr-3 mt-1">✓</span>
+                                <span>Assisted with incident triage and log correlation using Splunk</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-cyan-400 mr-3 mt-1">✓</span>
+                                <span>Developed SIEM queries to reduce false positives by 30%</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="border-l-4 border-cyan-400 pl-6 py-4 animate-slide-in-left" style="animation-delay: 0.1s;">
+                        <h3 class="text-2xl font-bold text-cyan-300 mb-1">Security Operations Intern</h3>
+                        <p class="text-cyan-400 text-lg font-semibold mb-1">Cyber Guardian Corp</p>
+                        <p class="text-gray-400 mb-3">January 2023 - June 2023</p>
+                        <p class="text-gray-300 mb-4">Gained hands-on experience in security operations, network monitoring, and basic penetration testing under senior analysts.</p>
+                        <ul class="space-y-2 text-gray-300">
+                            <li class="flex items-start">
+                                <span class="text-cyan-400 mr-3 mt-1">✓</span>
+                                <span>Assisted with network traffic analysis using Wireshark; identified suspicious communication patterns</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-cyan-400 mr-3 mt-1">✓</span>
+                                <span>Documented security procedures and created technical guides for junior team members</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-cyan-400 mr-3 mt-1">✓</span>
+                                <span>Participated in tabletop incident response exercises; practiced incident triage and containment</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-cyan-400 mr-3 mt-1">✓</span>
+                                <span>Completed 15+ TryHackMe rooms and blue team labs during internship</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="border-l-4 border-cyan-400 pl-6 py-4 animate-slide-in-left" style="animation-delay: 0.2s;">
+                        <h3 class="text-2xl font-bold text-cyan-300 mb-1">IT Support Technician</h3>
+                        <p class="text-cyan-400 text-lg font-semibold mb-1">Local IT Services</p>
+                        <p class="text-gray-400 mb-3">September 2023 - December 2023</p>
+                        <p class="text-gray-300 mb-4">Provided technical support and developed foundational cybersecurity knowledge while managing IT helpdesk operations.</p>
+                        <ul class="space-y-2 text-gray-300">
+                            <li class="flex items-start">
+                                <span class="text-cyan-400 mr-3 mt-1">✓</span>
+                                <span>Managed 200+ support tickets; resolved network and security-related issues</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-cyan-400 mr-3 mt-1">✓</span>
+                                <span>Implemented basic security controls and conducted user security awareness sessions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-cyan-400 mr-3 mt-1">✓</span>
+                                <span>Assisted in Windows and Linux system administration tasks</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="mb-16">
+            <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg p-8 shadow-2xl text-center animate-fade-in-up">
+                <h2 class="text-4xl font-bold mb-6 text-cyan-400 section-title">Contact & Social Media</h2>
+                <p class="text-lg text-gray-300 mb-10">Feel free to reach out for collaboration, consulting, or security discussions.</p>
+                
+                <div class="grid md:grid-cols-4 gap-6">
+                    <a href="mailto:your.ajanishukuroholamide@gmail.com" class="group bg-gradient-to-br from-cyan-500/20 to-blue-600/20 p-6 rounded-lg border border-cyan-400 hover:border-cyan-300 transition-all-smooth hover:shadow-lg hover:shadow-cyan-400/50 hover:scale-105">
+                        <div class="text-4xl mb-3 group-hover:animate-float">📧</div>
+                        <div class="font-bold text-cyan-300 mb-2">Email</div>
+                        <div class="text-sm text-gray-300 break-words">your.ajanishukuroholamide@gmail.com</div>
+                    </a>
+
+                    <a href="https://linkedin.com/in/Shukuroh Olamide" target="_blank" class="group bg-gradient-to-br from-cyan-500/20 to-blue-600/20 p-6 rounded-lg border border-cyan-400 hover:border-cyan-300 transition-all-smooth hover:shadow-lg hover:shadow-cyan-400/50 hover:scale-105">
+                        <div class="text-4xl mb-3 group-hover:animate-float">💼</div>
+                        <div class="font-bold text-cyan-300 mb-2">LinkedIn</div>
+                        <div class="text-sm text-gray-300">linkedin.com/in/Shukuroh Olamide</div>
+                    </a>
+
+                    <a href="https://github.com/Biodun555" target="_blank" class="group bg-gradient-to-br from-cyan-500/20 to-blue-600/20 p-6 rounded-lg border border-cyan-400 hover:border-cyan-300 transition-all-smooth hover:shadow-lg hover:shadow-cyan-400/50 hover:scale-105">
+                        <div class="text-4xl mb-3 group-hover:animate-float">🐙</div>
+                        <div class="font-bold text-cyan-300 mb-2">GitHub</div>
+                        <div class="text-sm text-gray-300">github.com/Biodun555</div>
+                    </a>
+
+                    <a href="tel:+1234567890" class="group bg-gradient-to-br from-cyan-500/20 to-blue-600/20 p-6 rounded-lg border border-cyan-400 hover:border-cyan-300 transition-all-smooth hover:shadow-lg hover:shadow-cyan-400/50 hover:scale-105">
+                        <div class="text-4xl mb-3 group-hover:animate-float">📱</div>
+                        <div class="font-bold text-cyan-300 mb-2">Phone</div>
+                        <div class="text-sm text-gray-300">+(234)9068566420 </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-blue-900 to-blue-800 text-center py-8 text-gray-300 border-t-2 border-cyan-400 mt-12">
+        <p>&copy; 2026 Ajani Shukuroh - Cybersecurity Professional Portfolio. All rights reserved.</p>
+        <p class="text-sm text-gray-400 mt-2">Security | Forensics | Incident Response | Automation</p>
+    </footer>
+
+</body>
+</html>
